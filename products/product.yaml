@@ -18,3 +18,8 @@ spec:
       name: "My Plan 02"
       trialPeriod: 3
       costMonth: "3"
+    plan03:
+      name: "My Plan 03"
+      trialPeriod: 10
+      costMonth: "20"
+
