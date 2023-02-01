@@ -1,0 +1,14 @@
+apiVersion: capabilities.3scale.net/v1beta1
+kind: Backend
+metadata:
+  name: bestbackend
+spec:
+  name: "Best Fruits API GitOps"
+  privateBaseURL: "http://fruits-threescale.apps.cluster-7rsxn.7rsxn.sandbox2829.opentlc.com"
+  systemName: "bestbackend"
+  metrics:
+      hits:
+        description: Number of API hits that hit the backend
+        friendlyName: Hits
+        unit: hit
+

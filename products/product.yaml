@@ -1,0 +1,20 @@
+apiVersion: capabilities.3scale.net/v1beta1
+kind: Product
+metadata:
+  name: bestproduct
+spec:
+  name: "Best Fruits Product"
+  systemName: "bestproduct"
+  providerAccountRef:
+    name: threescale-provider-account
+  backendUsages:
+    bestbackend:
+      path: /
+  applicationPlans:
+    plan01:
+      name: "My Plan 01"
+      setupFee: "14.56"
+    plan02:
+      name: "My Plan 02"
+      trialPeriod: 3
+      costMonth: "3"
