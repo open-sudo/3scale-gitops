@@ -22,4 +22,8 @@ spec:
       name: "My Plan 03"
       trialPeriod: 10
       costMonth: "20"
-
+  mappingRules:
+    - httpMethod: GET
+      pattern: "/"
+      increment: 1
+      metricMethodRef: hits
