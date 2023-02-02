@@ -2,6 +2,11 @@
 ## OpenShift
 First log in into OpenShift using the CLI. Make sure you are cluster admin.
 
+## Apicurio API
+
+echo `oc whoami --show-server |  cut -c12- | awk '{print "https://apicurito-ui-apicurito.apps"$1}' | rev | cut -c6- | rev`
+
+
 
 ## CamelK Installation
 
