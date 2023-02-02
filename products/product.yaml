@@ -4,7 +4,7 @@ metadata:
   name: bestproduct
 spec:
   name: "Best Fruits Product"
-  systemName: "bestproduct"
+  systemName: "bestproduct-replicat"
   providerAccountRef:
     name: threescale-provider-account
   backendUsages:
