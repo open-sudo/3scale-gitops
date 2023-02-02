@@ -2,11 +2,27 @@
 ## OpenShift
 First log in into OpenShift using the CLI. Make sure you are cluster admin.
 
-## Apicurio API
+## Important Links
 
+### Apicurio
+```
 echo `oc whoami --show-server |  cut -c12- | awk '{print "https://apicurito-ui-apicurito.apps"$1}' | rev | cut -c6- | rev`
+```
 
+### GitOps
+```
+echo `oc whoami --show-server |  cut -c12- | awk '{print "https://openshift-gitops-server-openshift-gitops.apps"$1}' | rev | cut -c6- | rev`
+```
 
+### Microcks
+```
+echo `oc whoami --show-server |  cut -c12- | awk '{print "https://microcks-microcks.apps"$1}' | rev | cut -c6- | rev`
+```
+### 3scale
+
+```
+echo `oc whoami --show-server |  cut -c12- | awk '{print "https://user1-admin.apps"$1}' | rev | cut -c6- | rev`
+```
 
 ## CamelK Installation
 
