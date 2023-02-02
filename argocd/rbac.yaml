@@ -5,25 +5,26 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: openshift-gitops-argocd-application-controller
+    namespace: threescale
+  - kind: ServiceAccount
+    name: openshift-gitops-applicationset-controller
+    namespace: threescale
+  - kind: ServiceAccount
+    name: openshift-gitops-argocd-server
+    namespace: threescale
+  - kind: ServiceAccount
+    name: default
+    namespace: threescale
+  - kind: ServiceAccount
+    name: openshift-gitops-argocd-application-controller
     namespace: openshift-gitops
-  - kind: ServiceAccount
-    name: openshift-gitops-argocd-application-controller
-    namespace: amazon-cloudwatch
-  - kind: ServiceAccount
-    name: openshift-gitops-argocd-application-controller
-    namespace: openshift-dbaas-operator
-  - kind: ServiceAccount
-    name: openshift-gitops-argocd-application-controller
-    namespace: ack-system
   - kind: ServiceAccount
     name: openshift-gitops-applicationset-controller
     namespace: openshift-gitops
   - kind: ServiceAccount
     name: openshift-gitops-argocd-server
     namespace: openshift-gitops
-  - kind: ServiceAccount
-    name: default
-    namespace: threescale
+
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
