@@ -4,7 +4,7 @@ metadata:
   name: bestbackend
 spec:
   name: "Best Fruits API GitOps"
-  privateBaseURL: "http://fruits-threescale.apps.cluster-twhxq.twhxq.sandbox1728.opentlc.com"
+  privateBaseURL: "http://federate-threescale.apps.cluster-9zh9w.9zh9w.sandbox3182.opentlc.com"
   systemName: "bestbackend"
   metrics:
       hits:

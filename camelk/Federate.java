@@ -11,8 +11,8 @@ public class Federate extends RouteBuilder {
                 .removeHeaders("CamelHttpPath")
                 .multicast()
                 .aggregationStrategy(AggregationStrategies.string(","))
-		.to("http://fruits?bridgeEndpoint=true")
-		.to("http://vegetables?bridgeEndpoint=true")
+		.to("http://fruits-threescale.apps.cluster-9zh9w.9zh9w.sandbox3182.opentlc.com?bridgeEndpoint=true")
+		.to("http://vegetables-threescale.apps.cluster-9zh9w.9zh9w.sandbox3182.opentlc.com?bridgeEndpoint=true")
 		.end()
                 .setBody(simple("[ ${body} ]"))
                 .to("jslt:transform.json");
