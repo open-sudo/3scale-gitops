@@ -24,8 +24,7 @@ echo `oc whoami --show-server |  cut -c12- | awk '{print "https://microcks-micro
 echo `oc whoami --show-server |  cut -c12- | awk '{print "https://user1-admin.apps"$1}' | rev | cut -c6- | rev`
 ```
 
-## CamelK Installation
-
+## Install CamelK
 ```
 oc project threescale
 ```
@@ -59,14 +58,9 @@ export ACCESS_TOKEN=heheheheexample
 oc create secret generic threescale-provider-account --from-literal=adminURL=${THREE_SCALE_API_SERVER}  --from-literal=token=${ACCESS_TOKEN}
 ```
 
-Obtain GitOps URL with:
-
-```
-echo `oc whoami --show-server |  cut -c12- | awk '{print "https://openshift-gitops-server-openshift-gitops.apps"$1}' | rev | cut -c6- | rev`
-```
 Log in into GitOps using the OpenShift Log in Option.
 
-## Camel K APIs
+## Deploy Camel K APIs
 
 Deploy Camel routes and review:
 ```
