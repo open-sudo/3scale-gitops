@@ -13,11 +13,12 @@ Wait 5 minutes and follow up with:
 oc apply -f argocd/argocd.yaml
 oc get routes gitops-server -n openshift-gitops
 ```
-
+## Open ArgoCD UI
 Copy the ArgoCD URL and open it with a browser. Login with OpenShift.
 
 Validate that there is no product in 3scale.
 
+## Deploy APIs with GitOps
 Review products/product.yaml and products/backend.yaml
 
 Now apply:
