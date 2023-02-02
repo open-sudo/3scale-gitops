@@ -1,9 +1,12 @@
 # API Management with GitOps
+## OpenShift
+First log in into OpenShift using the CLI. Make sure you are cluster admin.
 
-## Preparation
+
+## CamelK Installation
 
 ```
-oc prokect threescale
+oc project threescale
 ```
 Install Camel K Operator:
 ```
@@ -26,8 +29,8 @@ oc get routes openshift-gitops-server -n openshift-gitops
 Get an access from 3scale and create a secret:
 
 ```
+export THREE_SCALE_API_SERVER=`oc whoami --show-server |  cut -c12- | awk '{print "https://user1-admin.apps"$1}' | rev | cut -c6- | rev`
 export ACCESS_TOKEN=heheheheexample
-export THREE_SCALE_API_SERVER=hdhdhdhhdexample
 oc create secret generic threescale-provider-account --from-literal=adminURL=${THREE_SCALE_API_SERVER}  --from-literal=token=${ACCESS_TOKEN}
 ```
 
