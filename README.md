@@ -30,10 +30,20 @@ Get an access from 3scale and create a secret:
 
 ```
 export THREE_SCALE_API_SERVER=`oc whoami --show-server |  cut -c12- | awk '{print "https://user1-admin.apps"$1}' | rev | cut -c6- | rev`
+echo $THREE_SCALE_API_SERVER
+```
+Use the resulting URL to access 3scale and get your account access token
+```
 export ACCESS_TOKEN=heheheheexample
 oc create secret generic threescale-provider-account --from-literal=adminURL=${THREE_SCALE_API_SERVER}  --from-literal=token=${ACCESS_TOKEN}
 ```
 
+Obtain GitOps URL with:
+
+```
+echo `oc whoami --show-server |  cut -c12- | awk '{print "https://openshift-gitops-server-openshift-gitops.apps"$1}' | rev | cut -c6- | rev`
+```
+Log in into GitOps using the OpenShift Log in Option.
 
 ## Camel K APIs
 
