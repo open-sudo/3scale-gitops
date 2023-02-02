@@ -1,0 +1,1 @@
+[for(flatten(.)) {"name":.name}]

@@ -1,5 +1,33 @@
 # API Management with GitOps
 
+## Camel K APIs
+
+Install Camel K Operator:
+```
+kamel install
+```
+Deploy Camel routes and review:
+```
+cd camelk
+kamel run Fruits.groovy
+kamel run Vegetables.groovy
+```
+Wait till they are fully deployed and get the routes
+```
+kamel get
+```
+Get the routes:
+
+```
+oc get routes
+```
+Include these routes in Federated.groovy then deploy it:
+
+```
+kamel run Federated.groovy
+```
+
+
 ## Install ArgoCD
 
 ```
