@@ -1,11 +1,39 @@
 # API Management with GitOps
 
-## Camel K APIs
+## Preparation
 
+```
+oc prokect threescale
+```
 Install Camel K Operator:
 ```
 kamel install
 ```
+## Install ArgoCD
+
+```
+oc apply -f argocd/operator.yaml
+oc apply -f argocd/rbac.yaml
+```
+
+Wait 5 minutes and follow up with:
+
+```
+oc apply -f argocd/argocd.yaml
+oc get routes openshift-gitops-server -n openshift-gitops
+```
+## Create Secret
+Get an access from 3scale and create a secret:
+
+```
+export ACCESS_TOKEN=heheheheexample
+export THREE_SCALE_API_SERVER=hdhdhdhhdexample
+oc create secret generic threescale-provider-account --from-literal=adminURL=${THREE_SCALE_API_SERVER}  --from-literal=token=${ACCESS_TOKEN}
+```
+
+
+## Camel K APIs
+
 Deploy Camel routes and review:
 ```
 cd camelk
@@ -27,26 +55,9 @@ Include these routes in Federated.groovy then deploy it:
 kamel run Federated.groovy
 ```
 
+Review the APIs, invoke them, look at the results. Modify the Federate.grooy to include transform.json.
 
-## Install ArgoCD
 
-```
-oc apply -f argocd/operator.yaml
-oc apply -f argocd/rbac.yaml
-```
-
-Wait 5 minutes and follow up with:
-
-```
-oc apply -f argocd/argocd.yaml
-oc get routes openshift-gitops-server -n openshift-gitops
-```
-## Create Secret
-Get an access from 3scale and create a secret:
-
-```
-oc create secret generic threescale-provider-account --from-literal=adminURL=https://user1-admin.apps.cluster-5z7vm.5z7vm.sandbox1343.opentlc.com/  --from-literal=token=6f01c01d8914868ba4b49ffd24fd821965b75da1e208943937987648947392e1
-```
 
 ## Open ArgoCD UI
 Copy the ArgoCD URL and open it with a browser. Login with OpenShift.
